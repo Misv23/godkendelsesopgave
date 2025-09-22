@@ -22,3 +22,6 @@ React Native (Expo) app med 3 screens: Kort, Profil og Kontakt.
 
 Her er linket til min demo på youtube:
 https://youtube.com/shorts/dxy2EDYaGf4?feature=share
+
+Og linket til min github:
+https://github.com/Misv23/godkendelsesopgave.git
