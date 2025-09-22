@@ -18,3 +18,7 @@ React Native (Expo) app med 3 screens: Kort, Profil og Kontakt.
 - `components/` – genbrugelige komponenter
 - `styles/GlobalStyles.js` – farver/spacing/typografi
 - `assets/` – billeder/ikoner
+
+
+Her er linket til min demo på youtube:
+https://youtube.com/shorts/dxy2EDYaGf4?feature=share
