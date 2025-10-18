@@ -12,15 +12,30 @@ React Native (Expo) app med 3 screens: Kort, Profil og Kontakt.
 - 1+ liste: Landeliste (DK/SE/NO) + Kontaktliste
 - Styling i separat fil: `styles/GlobalStyles.js`
 
+## Skærme
+
+Appen består af 5 skærme:
+
+Kort – viser festivalpladsen
+Kontakt – info om nødkontakt og mulighed for at sende mail
+Profil – viser brugeroplysninger og favoritcitat
+Program – oversigt over aktiviteter (fiktivt eksempel)
+Historik – tidligere års citater fra Håb & Drømme Festivalen
+
 ## Struktur (uddrag)
 - `App.js` – navigation og tabs
-- `screens/` – `MapScreen.js`, `ProfileScreen.js`, `ContactScreen.js`
+- `screens/` – `MapScreen.js`, `ProfileScreen.js`, `ContactScreen.js`, 'HistoryScreen.js', 'ProgramScreen.js'
 - `components/` – genbrugelige komponenter
-- `styles/GlobalStyles.js` – farver/spacing/typografi
+- `styles/GlobalStyles.js`, 'HeaderStyles.js', 'historyStyles.js', 'profileStyles.js', 'programStyles.js' – farver/spacing/typografi
 - `assets/` – billeder/ikoner
 
+## Ny funktionalitet med brug af AsyncStorage
+På Historik-siden kan brugeren trykke på et hjerte-ikon ud for et citat.
+Det valgte citat gemmes lokalt med AsyncStorage, så det huskes selv efter appen lukkes.
+På Profil-siden vises det gemte citat under “Mit yndlingscitat”.
+Brugeren kan altid fjerne citatet igen.
 
-Her er linket til min demo på youtube:
+Her er linket til demo nr.2 på youtube:
 https://youtube.com/shorts/dxy2EDYaGf4?feature=share
 
 Og linket til min github:

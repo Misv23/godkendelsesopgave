@@ -27,8 +27,8 @@ export default function ContactScreen() {
     {
       id: "mail",
       icon: <Ionicons name="mail" size={22} color="white" />,
-      label: "absalon@pha.dk",
-      onPress: () => open("mailto:absalon@pha.dk"),
+      label: "slagelseHogD@gmail.dk",
+      onPress: () => open("mailto:aslagelseHogD@gmail.dk"),
     },
     {
       id: "fb",
