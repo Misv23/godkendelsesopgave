@@ -35,8 +35,14 @@ Det valgte citat gemmes lokalt med AsyncStorage, så det huskes selv efter appen
 På Profil-siden vises det gemte citat under “Mit yndlingscitat”.
 Brugeren kan altid fjerne citatet igen.
 
+## "rettelser siden sidst" baseret på Sofies feedback
+Expo Go er blevet opdateret til version 54.0.10
+Alt styling er blevet flyttet hen under styles
+
 Her er linket til demo nr.2 på youtube:
-https://youtube.com/shorts/dxy2EDYaGf4?feature=share
+https://youtube.com/shorts/L0bPG9L6MaE?feature=share
 
 Og linket til min github:
+https://github.com/Misv23/godkendelsesopgave
+og repository
 https://github.com/Misv23/godkendelsesopgave.git
