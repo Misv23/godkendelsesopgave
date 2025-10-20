@@ -3,7 +3,7 @@ import React from "react";
 import { View, Text, ScrollView } from "react-native";
 import styles from "../styles/programStyles";
 
-export default function ProgramScreen() {
+export default function ProgramScreen() {// det nedenstående er bare et fiktivt program
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Program</Text>

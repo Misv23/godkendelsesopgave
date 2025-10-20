@@ -1,3 +1,4 @@
+// Importerer nødvendige React hooks og komponenter
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
@@ -5,13 +6,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import styles from '../styles/historyStyles';
 
-const STORAGE_YEAR_KEY = 'history.selectedYear';
-const FAVORITE_KEY = 'profile.favoriteQuote';
+// Nøgler til lokal lagring (AsyncStorage)
+const STORAGE_YEAR_KEY = 'history.selectedYear'; // gemmer sidste valgte år
+const FAVORITE_KEY = 'profile.favoriteQuote'; // gemmer yndlingscitat
 
 export default function HistoryScreen() {
+  // State til valgt år og yndlingscitat
   const [year, setYear] = useState('2024');
   const [favorite, setFavorite] = useState(null);
 
+  // Citater fra tidligere Håb & Drømme Festivaler
   const quotes = {
     '2024': [
       `"Jeg drømmer om at finde mig en kæreste" - Hadi (15 år)`,
@@ -24,8 +28,10 @@ export default function HistoryScreen() {
     ],
   };
 
+  // Sorterer årene, så det nyeste kommer først
   const years = Object.keys(quotes).sort((a, b) => b.localeCompare(a));
 
+  // useEffect: henter tidligere gemt år og yndlingscitat fra AsyncStorage
   useEffect(() => {
     (async () => {
       const savedYear = await AsyncStorage.getItem(STORAGE_YEAR_KEY);
@@ -35,20 +41,25 @@ export default function HistoryScreen() {
     })();
   }, []);
 
+  // useEffect: gemmer det valgte år, hver gang brugeren ændrer det
   useEffect(() => {
     AsyncStorage.setItem(STORAGE_YEAR_KEY, year).catch(() => {});
   }, [year]);
 
+  // Funktion til at gemme eller fjerne yndlingscitat
   const toggleFavorite = async (quote) => {
     if (favorite === quote) {
+      // Hvis citatet allerede er valgt → fjern det
       setFavorite(null);
       await AsyncStorage.removeItem(FAVORITE_KEY);
     } else {
+      // Ellers gem nyt yndlingscitat
       setFavorite(quote);
       await AsyncStorage.setItem(FAVORITE_KEY, quote);
     }
   };
 
+  // Viser hvert citat i listen + hjerteikon til at vælge favorit
   const renderItem = ({ item }) => {
     const isFav = item === favorite;
     return (
@@ -69,15 +80,18 @@ export default function HistoryScreen() {
     );
   };
 
+  // Returnerer hele layoutet for skærmen
   return (
     <View style={styles.container}>
       <Text style={styles.title}>H&amp;D fra tidligere år</Text>
 
       <View style={styles.panel}>
+        {/* Kort introduktionstekst */}
         <Text style={styles.subtitle}>
           Her kan du se nogle "honorable mentions" af håb og drømme fra tidligere år
         </Text>
 
+        {/* Dropdown til at vælge år */}
         <Text style={styles.label}>Vælg året her:</Text>
         <View style={styles.pickerWrap}>
           <Picker
@@ -92,6 +106,7 @@ export default function HistoryScreen() {
           </Picker>
         </View>
 
+        {/* Liste over citater for det valgte år */}
         <FlatList
           data={quotes[year] || []}
           keyExtractor={(item, idx) => `${year}-${idx}`}

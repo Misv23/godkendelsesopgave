@@ -23,7 +23,7 @@ export default function App() {
         <Tab.Navigator
           initialRouteName="Program"
           screenOptions={({ route }) => ({
-            header: () => <Header />, // viser dit logo øverst
+            header: () => <Header />, // viser Slagelse kommune logo øverst (jeg havde tidligere problemer med margins)
             tabBarActiveTintColor: palette.teal,
             tabBarStyle: { height: 64, paddingBottom: 8, paddingTop: 8 },
             tabBarIcon: ({ color, size }) => {

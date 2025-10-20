@@ -22,7 +22,7 @@ export default function MapScreen() {
         {/* Kort med marker */}
         <MapView
           style={styles.map}
-          provider={Platform.OS === "android" ? PROVIDER_GOOGLE : undefined} // Brug Google Maps på Android
+          provider={Platform.OS === "android" ? PROVIDER_GOOGLE : undefined} // Bruger Google Maps på Android
           initialRegion={{
             latitude: LAT,
             longitude: LNG,

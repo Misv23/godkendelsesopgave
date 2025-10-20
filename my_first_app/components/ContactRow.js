@@ -1,11 +1,11 @@
 // components/ContactRow.js
-// Viser en trykbar række med ikon og tekst
+// Viser en trykbar række med ikoner og tekst
 
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { palette, spacing } from "../styles/GlobalStyles";
 
-// Props: icon (ikon-komponent), label (tekst), onPress (hvad der sker ved tryk)
+// Props: ikoner (ikon-komponent), label (tekst), onPress (hvad der sker ved tryk)
 export default function ContactRow({ icon, label, onPress }) {
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.75}>

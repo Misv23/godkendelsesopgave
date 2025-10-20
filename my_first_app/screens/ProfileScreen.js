@@ -30,7 +30,7 @@ export default function ProfileScreen() {
         {/* Profilbillede */}
         <Image source={require("../assets/profile.png")} style={styles.avatar} />
 
-        {/* Info-knapper (samme look som før) */}
+        {/* Info-knapper */}
         <InfoButton label="Sebastian Bruun" />
         <InfoButton
           label="Sebastian.b@gmail.com"
@@ -42,7 +42,7 @@ export default function ProfileScreen() {
         />
       </View>
 
-      {/* Ny sektion: yndlingscitat (fra Historik) */}
+      {/* Ger vises yndlingscitat (fra HistoryScreen) */}
       <View style={styles.quoteCard}>
         <Text style={styles.quoteTitle}>Mit yndlingscitat</Text>
         {favoriteQuote ? (
